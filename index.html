@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaowei Chen — Postdoctoral Fellow, MPI-SP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#f8f7f4; --text:#1c1c1c; --muted:#5a5a5a; --light:#888;
+      --accent:#2a4d7f; --accent-hover:#1e3a5f; --green:#2d6a4f; --amber:#2d1608;
+      --border:#ddd9d0; --tag-bg:#edf1f7;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline;color:var(--accent-hover)}
+    .page{max-width:860px;margin:0 auto;padding:4rem 1.5rem 6rem}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .page>*{animation:fadeUp 0.5s ease both}
+    .page>*:nth-child(1){animation-delay:0.05s}.page>*:nth-child(2){animation-delay:0.12s}
+    .page>*:nth-child(3){animation-delay:0.19s}.page>*:nth-child(4){animation-delay:0.26s}
+    .bio{display:grid;grid-template-columns:155px 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem}
+    .bio-header{margin-bottom:1.6rem}
+    .bio-intro-block{margin-top:0}
+    .bio-name{font-family:'EB Garamond',serif;font-size:2.2rem;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.15rem}
+    .bio-name-cn{font-family:'EB Garamond',serif;font-size:1.1rem;color:var(--muted);margin-bottom:1rem;letter-spacing:0.05em}
+    .bio-position{font-size:0.9rem;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+    .bio-position strong{color:var(--text);font-weight:500}
+    .bio-intro{font-size:0.935rem;margin-bottom:1rem;line-height:1.7}
+    .bio-links{display:flex;flex-wrap:wrap;align-items:center;gap:0.1rem;font-size:0.85rem}
+    .bio-links .sep{color:var(--border);margin:0 0.3rem}
+    .photo-placeholder{width:145px;height:145px;border-radius:6px;background:linear-gradient(145deg,#cdd9e8 0%,#9ab3cc 100%);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;border:1px solid var(--border)}
+    img.photo{width:145px;height:145px;border-radius:6px;object-fit:cover;border:1px solid var(--border);display:block}
+    .keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2.5rem}
+    .kw{background:var(--tag-bg);color:var(--accent);font-size:0.78rem;font-weight:500;padding:0.25rem 0.7rem;border-radius:20px;border:1px solid #d0d9e8}
+    .sec-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:500;margin:2.8rem 0 1rem;padding-bottom:0.4rem;border-bottom:1.5px solid var(--border)}
+    .list-rows{list-style:none}
+    .list-rows li{display:flex;gap:1rem;padding:0.38rem 0;font-size:0.9rem;border-bottom:1px solid #eeebe4}
+    .list-rows li:last-child{border-bottom:none}
+    .row-date{min-width:4.5rem;font-size:0.8rem;color:var(--light);flex-shrink:0;padding-top:0.1rem}
+    .badge{display:inline-block;background:#fff8e6;color:var(--amber);font-size:0.72rem;font-weight:500;padding:0.05rem 0.45rem;border-radius:3px;margin-left:0.3rem;border:1px solid #f0d080;vertical-align:middle}
+    .filter-bar{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1.2rem}
+    .fbtn{background:none;border:1px solid var(--border);border-radius:3px;padding:0.22rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;cursor:pointer;color:var(--muted);transition:all 0.15s}
+    .fbtn:hover,.fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .pub-list{list-style:none}
+    .pub-item{display:flex;gap:1.1rem;padding:1rem 0;border-bottom:1px solid #edeae3}
+    .pub-item:last-child{border-bottom:none}
+    .pub-item.featured{background:#fffbf3;border-left:3px solid #e6a817;padding-left:0.9rem;margin-left:-1rem;padding-right:0.1rem;border-bottom:1px solid #f0e3c0;border-radius:0 4px 4px 0}
+    .pub-num{min-width:1.6rem;font-size:0.78rem;color:var(--light);text-align:right;padding-top:0.18rem;flex-shrink:0}
+    .pub-body{flex:1;min-width:0}
+    .pub-title{font-family:'EB Garamond',serif;font-size:1.02rem;font-weight:500;line-height:1.4;display:block;margin-bottom:0.22rem}
+    .pub-title a{color:var(--text)}.pub-title a:hover{color:var(--accent)}
+    .pub-authors{font-size:0.845rem;color:var(--muted);margin-bottom:0.2rem}
+    .pub-authors strong{color:var(--text);font-weight:500}
+    .pub-venue{font-size:0.845rem;margin-bottom:0.35rem}
+    .pub-venue em{font-family:'EB Garamond',serif;font-style:italic}
+    .pub-meta{display:flex;flex-wrap:wrap;gap:0.3rem;align-items:center}
+    .vtag{font-size:0.72rem;font-weight:500;padding:0.1rem 0.5rem;border-radius:3px;letter-spacing:0.02em}
+    .vtag.astar{background:#e8f0fb;color:#1e4d9e;border:1px solid #c5d7f0}
+    .vtag.b{background:#f0f0f0;color:#555;border:1px solid #ddd}
+    .vtag.journal{background:#e8f5ef;color:var(--green);border:1px solid #b4d9c4}
+    .vtag.review{background:#f5f0ff;color:#5b3fa0;border:1px solid #d0c0ef}
+    .vtag.award{background:#fff8e6;color:var(--amber);border:1px solid #f0d080}
+    .vtag.workshop{background:#f5f5f5;color:#666;border:1px solid #ddd}
+    .pub-links{display:flex;gap:0.35rem;flex-wrap:wrap;margin-left:auto;align-items:center}
+    .pub-links a{font-size:0.77rem;color:var(--accent);border:1px solid #c8d4e3;padding:0.08rem 0.5rem;border-radius:3px;transition:all 0.12s;white-space:nowrap}
+    .pub-links a:hover{background:var(--accent);color:#fff;border-color:var(--accent);text-decoration:none}
+    .service-block{margin-bottom:1.2rem}
+    .service-block h3{font-size:0.78rem;font-weight:500;color:var(--muted);margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.06em}
+    .service-list{list-style:none}
+    .service-list li{font-size:0.88rem;padding:0.2rem 0;border-bottom:1px dotted #e5e1d8;display:flex;justify-content:space-between;gap:1rem}
+    .service-list li:last-child{border-bottom:none}
+    .service-year{color:var(--light);font-size:0.8rem;flex-shrink:0}
+    .footer{margin-top:4rem;font-size:0.78rem;color:var(--light);text-align:center;padding-top:1.5rem;border-top:1px solid var(--border)}
+    @media(max-width:600px){.bio{grid-template-columns:1fr}.photo-placeholder, img.photo{width:100px;height:100px;font-size:2rem}.pub-item.featured{margin-left:-0.5rem}}
+  </style>
+</head>
+<body>
+<div class="page">
+  
+
+<div class="bio">
+  <img class="photo" src="images/profile.jpg" alt="Xiaowei Chen">
+  <div>
+    <div class="bio-header">
+      <h1 class="bio-name">Dr. Xiaowei Chen</h1>
+      <div class="bio-position">
+        <strong>Postdoctoral Fellow</strong> · Human-Centered Security and Privacy Group<br>
+        Max Planck Institute for Security and Privacy, Bochum, Germany
+      </div>
+    </div>
+
+    <div class="bio-intro-block">
+      <p class="bio-intro">
+        I am a postdoctoral researcher working at the intersection of
+        <strong>human-computer interaction, security &amp; privacy, and behavioral science</strong>.
+        My research designs, deploys, and evaluates Security and Privacy interventions in the field. 
+        Before joining MPI-SP, I worked as a doctoral researcher at the Univerisity of Luxembourg and completed my PhD in Psychology (Human-Computer Interaction) in September 2025.
+      </p>
+
+      <p class="bio-intro">
+        I currently lead the <strong>SiCV project</strong> ("Supporting Infrastructure for Cybercrime Victims"),
+        aiming to thoroughly examine the recovery process of cybercrime victims in EU states and to design social and technical supporting infrastructures to aid their recovery. I work with key stakeholders from service platforms, law enforcement, and financial institutions to address the challenges posed by emerging cybercrimes.
+      </p>
+
+      <div class="bio-links">
+        <a href="mailto:xiaowei.chen@mpi-sp.org">xiaowei.chen@mpi-sp.org</a>
+        <span class="sep">/</span>
+        <a href="https://scholar.google.com/citations?user=B-n07usAAAAJ&hl=zh-CN">Google Scholar</a>
+        <span class="sep">/</span>
+        <a href="https://orcid.org/0000-0003-0794-1551">ORCID</a>
+        <span class="sep">/</span>
+        <a href="https://www.researchgate.net/profile/Xiaowei-Chen-41">ResearchGate</a>
+        <span class="sep">/</span>
+        <a href="https://www.linkedin.com/in/xwchen">LinkedIn</a>
+        <span class="sep">/</span>
+        <a href="cv.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="keywords">
+  <span class="kw">Human-Centered Security &amp; Privacy</span>
+  <span class="kw">Human-Computer Interaction</span>
+  <span class="kw">Phishing &amp; Scam Interventions</span>
+  <span class="kw">Cybercrime Victim Support</span>
+  <span class="kw">Motivation &amp; Behavior Change</span>
+  <span class="kw">Field Experiments &amp; RCTs</span>
+  <span class="kw">Mixed Methods</span>
+</div>
+
+<h2 class="sec-title">News</h2>
+<ul class="list-rows">
+  <li><span class="row-date">Feb 2026</span><span>Attended <strong>Police Accountability Conference</strong> (Freiburg): exchange with law and criminology scholars on challenges  &amp; opportunities in policing emerging cybercrimes.</span></li>
+  <li><span class="row-date">Jan 2026</span><span>Two papers accepted at <strong>CHI '26</strong> (Barcelona): Individual cyber resilience &amp; Role-based fraud intervention for older adults.</span></li>
+  <li><span class="row-date">Nov 2025</span><span>Joined <strong>Max Planck Institute for Security and Privacy</strong> as Postdoctoral Fellow in the Human-Centered Security and Privacy Group.</span></li>
+  <li><span class="row-date">Sep 2025</span><span>Defended <strong>PhD Thesis</strong> An Interdisciplinary Approach to Improve Security and Privacy Intervention Design: Motivation Theories, User Experience, and Field Experiments.</span></li>
+  <li><span class="row-date">Oct 2025</span><span>Paper on "Empowering parents to support children's online security &amp; privacy" presented at <strong>ACM CCS '25</strong>.</span></li>
+  <li><span class="row-date">Aug 2025</span><span>Appointed <strong>Associate Chair</strong>, User Experience &amp; Usability Subcommittee, ACM CHI '26.</span></li>
+</ul>
+
+<h2 class="sec-title">Selected Honors &amp; Awards</h2>
+<ul class="list-rows">
+  <li><span class="row-date">2025</span><span><a href="https://www.uni.lu/en/about/profile/highlights/highlights-2025/news-and-stories/"><strong>Excellent PhD Thesis Award</strong></a>, University of Luxembourg</span></li>
+  <li><span class="row-date">2025</span><span><a href="https://programs.sigchi.org/chi/2025/program/content/189394"><strong>Best Paper Honorable Mention</strong></a>, ACM CHI '25</span></li>
+  <li><span class="row-date">2024/25</span><span>Research Support Grants, Doctoral School in Humanities &amp; Social Sciences (DSHSS), University of Luxembourg</span></li>
+  <li><span class="row-date">2025</span><span>Travel Grant (Academic Guest), Max Planck Institute for Security and Privacy</span></li>
+  <li><span class="row-date">2021</span><span><a href="https://www.uni.lu/research-en/ias/funded-projects/young-academics/"><strong>Young Academic Grant</strong></a>, Institute for Advanced Studies, University of Luxembourg</span></li>
+  <li><span class="row-date">2021</span><span>Karl Engvers Foundation Scholarship, Sweden</span></li>
+  <li><span class="row-date">2020</span><span>Erasmus+ Scholarship, European Commission</span></li>
+</ul>
+
+<h2 class="sec-title">Publications</h2>
+<div class="filter-bar">
+  <button class="fbtn active" onclick="filterPubs('all',this)">All</button>
+  <button class="fbtn" onclick="filterPubs('phishing',this)">S&amp;P Interventions</button>
+  <button class="fbtn" onclick="filterPubs('victims',this)">Cybercrime Victims</button>
+  <button class="fbtn" onclick="filterPubs('motivation',this)">Motivation Theories</button>
+  <button class="fbtn" onclick="filterPubs('journal',this)">User Experience</button>
+</div>
+
+<ul class="pub-list" id="pub-list">
+  <!-- Two 'Under review' entries removed -->
+
+  <li class="pub-item featured" data-tags="victims">
+    <span class="pub-num">10</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://arxiv.org/abs/2601.16050">From Harm to Healing: Understanding Individual Resilience after Cybercrimes</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Mindy Tran, Yue Deng, Bhupendra Acharya, Yixin Zou</div>
+      <div class="pub-venue"><em>ACM CHI Conference on Human Factors in Computing Systems (CHI '26)</em>, Barcelona, 2026</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><div class="pub-links"><a href="https://arxiv.org/abs/2601.16050">arXiv</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="phishing">
+    <span class="pub-num">9</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://arxiv.org/abs/2601.12324">Experiencer, Helper, or Observer: Online Fraud Intervention for Older Adults Through a Role-based Simulation Approach</a></span>
+      <div class="pub-authors">Yue Deng, <strong>Xiaowei Chen</strong>, Junxiang Liao, Bo Li, Yixin Zou</div>
+      <div class="pub-venue"><em>ACM CHI Conference on Human Factors in Computing Systems (CHI '26)</em>, Barcelona, 2026</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><div class="pub-links"><a href="https://arxiv.org/abs/2601.12324">arXiv</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item featured" data-tags="phishing motivation">
+    <span class="pub-num">8</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://doi.org/10.1145/3719027.3765214">Empowering Parents to Support Children's Online Security and Privacy: Findings from a Randomized Controlled Trial</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Verena Distler, Chloe Gordon, Yaxing Yao, Ziwen Teuber</div>
+      <div class="pub-venue"><em>ACM CCS Conference on Computer and Communications Security (CCS '25)</em>, Taipei, 2025</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><div class="pub-links"><a href="https://doi.org/10.1145/3719027.3765214">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item featured" data-tags="motivation">
+    <span class="pub-num">7</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://doi.org/10.1145/3706598.3713122">Beyond Deterrence: A Systematic Review of the Role of Autonomous Motivation in Organizational Security Behavior Studies</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Lorin Schöni, Verena Distler, Verena Zimmermann</div>
+      <div class="pub-venue"><em>ACM CHI Conference on Human Factors in Computing Systems (CHI '25)</em>, Yokohama, 2025</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><span class="vtag award">🏅 Best Paper Honorable Mention</span><div class="pub-links"><a href="https://doi.org/10.1145/3706598.3713122">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="motivation">
+    <span class="pub-num">6</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://www.usenix.org/conference/soups2024/presentation/chen">What Motivates and Discourages Employees in Phishing Interventions: An Exploration of Expectancy-Value Theory</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Sophie Doublet, Anastasia Sergeeva, Gabriele Lenzini, Vincent Koenig, Verena Distler</div>
+      <div class="pub-venue"><em>USENIX Symposium on Usable Privacy and Security (SOUPS 2024)</em></div>
+      <div class="pub-meta"><span class="vtag b">B CORE</span><div class="pub-links"><a href="https://www.usenix.org/conference/soups2024/presentation/chen">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item featured" data-tags="phishing">
+    <span class="pub-num">5</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://doi.org/10.1145/3613904.3641943">The Effects of Group Discussion and Role-playing Training on Self-efficacy, Support-seeking, and Reporting Phishing Emails: Evidence from a Mixed-design Experiment</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Margault Sacre, Gabriele Lenzini, Samuel Greiff, Verena Distler, Anastasia Sergeeva</div>
+      <div class="pub-venue"><em>ACM CHI Conference on Human Factors in Computing Systems (CHI '24)</em>, Honolulu, 2024</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><div class="pub-links"><a href="https://doi.org/10.1145/3613904.3641943">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="journal">
+    <span class="pub-num">4</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642791">Exploring Intended Functions of Indoor Flying Robots Interacting With Humans in Proximity</a></span>
+      <div class="pub-authors">Ziming Wang, Yiqian Wu, Shiwei Yang, <strong>Xiaowei Chen</strong>, Björn Rohles, Morten Fjeld</div>
+      <div class="pub-venue"><em>ACM CHI Conference on Human Factors in Computing Systems (CHI '24)</em>, Honolulu, 2024</div>
+      <div class="pub-meta"><span class="vtag astar">A* CORE</span><div class="pub-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642791">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="motivation">
+    <span class="pub-num">3</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://spei2024.github.io/papers/spei2024-final7.pdf">Making Motivation Theories Accessible: Introducing Motivation Cards to Map Motivators for Security and Privacy Education</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Sophie Doublet, Verena Distler</div>
+      <div class="pub-venue"><em>S&amp;PEI Workshop, USENIX SOUPS 2024</em></div>
+      <div class="pub-meta"><span class="vtag workshop">Workshop</span><div class="pub-links"><a href="https://spei2024.github.io/papers/spei2024-final7.pdf">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="journal">
+    <span class="pub-num">2</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0883035525001703">"Who will be left behind?": A Swedish Case of Learning AI in Vocational Education</a></span>
+      <div class="pub-authors">Anna Metreveli†, <strong>Xiaowei Chen</strong>†, Anders Hedman, Anastasia Sergeeva <em style="font-size:0.8rem">(† co-first authors)</em></div>
+      <div class="pub-venue"><em>International Journal of Educational Research</em> 133 (2025): 102697</div>
+      <div class="pub-meta"><span class="vtag journal">Journal · SJR Q1</span><div class="pub-links"><a href="https://www.sciencedirect.com/science/article/pii/S0883035525001703">paper</a></div></div>
+    </div>
+  </li>
+
+  <li class="pub-item" data-tags="journal">
+    <span class="pub-num">1</span>
+    <div class="pub-body">
+      <span class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S2451958823000325">Do Persuasive Designs Make Smartphones More Addictive? A Mixed-Methods Study on Chinese University Students</a></span>
+      <div class="pub-authors"><strong>Xiaowei Chen</strong>, Anders Hedman, Verena Distler, Vincent Koenig</div>
+      <div class="pub-venue"><em>Computers in Human Behavior Reports</em> 10, 100299 (2023)</div>
+      <div class="pub-meta"><span class="vtag journal">Journal · SJR Q1</span><div class="pub-links"><a href="https://www.sciencedirect.com/science/article/pii/S2451958823000325">paper</a></div></div>
+    </div>
+  </li>
+
+</ul>
+
+<h2 class="sec-title">Community Service</h2>
+<div class="service-block">
+  <h3>Associate Chair</h3>
+  <ul class="service-list">
+    <li><span>ACM CHI '26 — User Experience &amp; Usability Subcommittee</span><span class="service-year">2026</span></li>
+  </ul>
+</div>
+<div class="service-block">
+  <h3>Program Committee</h3>
+  <ul class="service-list">
+    <li><span>CHIWORK — Symposium on HCI for Work</span><span class="service-year">2025–2026</span></li>
+    <li><span>EuroUSEC — European Symposium on Usable Security</span><span class="service-year">2025</span></li>
+  </ul>
+</div>
+<div class="service-block">
+  <h3>Reviewing</h3>
+  <ul class="service-list">
+    <li><span>Distinguished Reviewer Board — <em>ACM Transactions on Computer-Human Interaction</em></span><span class="service-year">Ongoing</span></li>
+    <li><span>ACM CHI, CSCW, NordiCHI; ECIS; WI; Computers in Human Behavior</span><span class="service-year">2023–2026</span></li>
+  </ul>
+</div>
+
+<h2 class="sec-title">Teaching &amp; Supervision</h2>
+<div class="service-block">
+  <h3>Lecturer</h3>
+  <ul class="service-list">
+    <li><span>Introduction to Human-Computer Interaction (undergraduate CS) — course design, delivery, assessment; UX design &amp; persuasive technology</span><span class="service-year">Uni. Luxembourg</span></li>
+  </ul>
+</div>
+<div class="service-block">
+  <h3>MSc Thesis Supervision</h3>
+  <ul class="service-list">
+    <li><span><strong>Ramya Kandula</strong> (KTH &amp; Ruhr University Bochum) — <em>Research Through Design to Mitigate Filter Bubble Effects on Social Media</em>; doctoral project on LLM-enhanced chatbot for social support</span></li>
+    <li><span><strong>Stefanie Pham</strong> (LMU München) — <em>How Johnny Experiences Phishing Warnings</em></span></li>
+  </ul>
+</div>
+
+<h2 class="sec-title">Education</h2>
+<ul class="list-rows">
+  <li><span class="row-date">2022–2025</span><span><strong>PhD in Psychology (HCI)</strong>, University of Luxembourg · Supervisor: Prof. Christine Schiltz · <em>Excellent PhD Thesis Award 2025</em></span></li>
+  <li><span class="row-date">Apr–Sep 2025</span><span><strong>Academic Guest</strong>, Max Planck Institute for Security and Privacy · Supervisor: Dr. Yixin Zou</span></li>
+  <li><span class="row-date">Mar–May 2024</span><span><strong>Visiting PhD Student</strong>, ETH Zürich · Supervisor: Prof. Verena Zimmermann</span></li>
+  <li><span class="row-date">2019–2021</span><span><strong>MSc Media Management</strong>, KTH Royal Institute of Technology, Stockholm</span></li>
+  <li><span class="row-date">2020–2021</span><span><strong>Erasmus+ Exchange</strong>, KU Leuven, Belgium</span></li>
+  <li><span class="row-date">2006–2012</span><span><strong>BA in Journalism</strong>, Northeast Agricultural University (NAU), China</span></li>
+</ul>
+
+<div class="footer">
+  Design inspired by <a href="https://jxhe.info/">Jingxuan He</a> &amp; <a href="https://jonbarron.info">Jon Barron</a>.
+  &nbsp;·&nbsp; Last updated March 2026.
+</div>
+
+</div>
+<script>
+  function filterPubs(tag,btn){
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#pub-list .pub-item').forEach(item=>{
+      const tags=(item.dataset.tags||'').split(' ');
+      item.style.display=(tag==='all'||tags.includes(tag))?'':'none';
+    });
+  }
+</script>
+</body>
+</html>
