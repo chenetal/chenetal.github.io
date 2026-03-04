@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Shield outline -->
+  <path d="M32 6 L52 14 V28
+           C52 42 42 52 32 58
+           C22 52 12 42 12 28
+           V14 Z"
+        fill="none"
+        stroke="#2563eb"
+        stroke-width="4"/>
+
+  <!-- Lock -->
+  <rect x="26" y="30" width="12" height="10" rx="2" fill="#2563eb"/>
+
+  <path d="M28 30 v-3 a4 4 0 0 1 8 0 v3"
+        fill="none"
+        stroke="#2563eb"
+        stroke-width="3"
+        stroke-linecap="round"/>
+</svg>
