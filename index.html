@@ -49,10 +49,6 @@
     .filter-bar{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1.2rem}
     .fbtn{background:none;border:1px solid var(--border);border-radius:3px;padding:0.22rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;cursor:pointer;color:var(--muted);transition:all 0.15s}
     .fbtn:hover,.fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .nav-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1.5px solid var(--border)}
-    .nav-tab{color:var(--muted);font-size:0.9rem;padding:0.3rem 0;transition:color 0.15s}
-    .nav-tab:hover{color:var(--accent);text-decoration:none}
-    .nav-tab.active{color:var(--accent);font-weight:500;border-bottom:2px solid var(--accent);padding-bottom:calc(0.3rem - 2px)}
     .pub-list{list-style:none}
     .pub-item{display:flex;gap:1.1rem;padding:1rem 0;border-bottom:1px solid #edeae3}
     .pub-item:last-child{border-bottom:none}
@@ -90,7 +86,7 @@
 <div class="page">
   
 
-<div class="bio" id="bio">
+<div class="bio">
   <img class="photo" src="images/profile.jpg" alt="Xiaowei Chen">
   <div>
     <div class="bio-header">
@@ -138,13 +134,7 @@
   <span class="kw">Human-Computer Interaction</span>
 </div>
 
-<div class="nav-tabs">
-  <a href="#bio" class="nav-tab active">Bio</a>
-  <a href="#publications" class="nav-tab">Publications</a>
-  <a href="#service" class="nav-tab">Service</a>
-</div>
-
-<h2 class="sec-title" id="news">News</h2>
+<h2 class="sec-title">News</h2>
 <ul class="list-rows">
   <li><span class="row-date">Feb 2026</span><span>Attended <strong>Police Accountability Conference</strong> (Freiburg): exchange with law and criminology scholars on challenges &amp; opportunities in policing emerging cybercrimes.</span></li>
   <li><span class="row-date">Jan 2026</span><span>Two papers accepted at <strong>CHI '26</strong> (Barcelona): Individual cyber resilience &amp; Role-based fraud intervention for older adults.</span></li>
@@ -164,7 +154,7 @@
   <li><span class="row-date">2020</span><span>Erasmus+ Scholarship, European Commission</span></li>
 </ul>
 
-<h2 class="sec-title" id="publications">Publications</h2>
+<h2 class="sec-title">Publications</h2>
 <div class="filter-bar">
   <button class="fbtn active" onclick="filterPubs('all',this)">All</button>
   <button class="fbtn" onclick="filterPubs('phishing',this)">S&amp;P Interventions</button>
@@ -277,7 +267,7 @@
 
 </ul>
 
-<h2 class="sec-title" id="service">Community Service</h2>
+<h2 class="sec-title">Community Service</h2>
 <div class="service-block">
   <h3>Associate Chair</h3>
   <ul class="service-list">
