@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Xiaowei Chen - Postdoctoral Fellow at Max Planck Institute for Security and Privacy. Researcher in human-centered security, privacy interventions, and HCI. Expertise in cybercrime victim support, phishing prevention, and behavioral security." />
   <meta name="google-site-verification" content="VuLmenACufxwpm4iqptiGdVWhSm8JfDsngyvtqbu3rc" />
   <meta name="msvalidate.01" content="D7A36088349CE565EFE3F138707BDA6D" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -48,6 +49,10 @@
     .filter-bar{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1.2rem}
     .fbtn{background:none;border:1px solid var(--border);border-radius:3px;padding:0.22rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;cursor:pointer;color:var(--muted);transition:all 0.15s}
     .fbtn:hover,.fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .nav-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1.5px solid var(--border)}
+    .nav-tab{color:var(--muted);font-size:0.9rem;padding:0.3rem 0;transition:color 0.15s}
+    .nav-tab:hover{color:var(--accent);text-decoration:none}
+    .nav-tab.active{color:var(--accent);font-weight:500;border-bottom:2px solid var(--accent);padding-bottom:calc(0.3rem - 2px)}
     .pub-list{list-style:none}
     .pub-item{display:flex;gap:1.1rem;padding:1rem 0;border-bottom:1px solid #edeae3}
     .pub-item:last-child{border-bottom:none}
@@ -85,7 +90,7 @@
 <div class="page">
   
 
-<div class="bio">
+<div class="bio" id="bio">
   <img class="photo" src="images/profile.jpg" alt="Xiaowei Chen">
   <div>
     <div class="bio-header">
@@ -133,7 +138,13 @@
   <span class="kw">Human-Computer Interaction</span>
 </div>
 
-<h2 class="sec-title">News</h2>
+<div class="nav-tabs">
+  <a href="#bio" class="nav-tab active">Bio</a>
+  <a href="#publications" class="nav-tab">Publications</a>
+  <a href="#service" class="nav-tab">Service</a>
+</div>
+
+<h2 class="sec-title" id="news">News</h2>
 <ul class="list-rows">
   <li><span class="row-date">Feb 2026</span><span>Attended <strong>Police Accountability Conference</strong> (Freiburg): exchange with law and criminology scholars on challenges &amp; opportunities in policing emerging cybercrimes.</span></li>
   <li><span class="row-date">Jan 2026</span><span>Two papers accepted at <strong>CHI '26</strong> (Barcelona): Individual cyber resilience &amp; Role-based fraud intervention for older adults.</span></li>
@@ -142,7 +153,7 @@
   <li><span class="row-date">Sep 2025</span><span>Successfully defended my <strong>PhD Thesis</strong>: <em>An Interdisciplinary Approach to Improve Security and Privacy Intervention Design: Motivation Theories, User Experience, and Field Experiments</em>.</span></li>
 </ul>
 
-<h2 class="sec-title">Selected Honors &amp; Awards</h2>
+<h2 class="sec-title" id="awards">Selected Honors &amp; Awards</h2>
 <ul class="list-rows">
   <li><span class="row-date">2025</span><span><a href="https://www.uni.lu/en/about/profile/highlights/highlights-2025/news-and-stories/"><strong>Excellent PhD Thesis Award</strong></a>, University of Luxembourg</span></li>
   <li><span class="row-date">2025</span><span><a href="https://programs.sigchi.org/chi/2025/program/content/189394"><strong>Best Paper Honorable Mention</strong></a>, ACM CHI '25</span></li>
@@ -153,7 +164,7 @@
   <li><span class="row-date">2020</span><span>Erasmus+ Scholarship, European Commission</span></li>
 </ul>
 
-<h2 class="sec-title">Publications</h2>
+<h2 class="sec-title" id="publications">Publications</h2>
 <div class="filter-bar">
   <button class="fbtn active" onclick="filterPubs('all',this)">All</button>
   <button class="fbtn" onclick="filterPubs('phishing',this)">S&amp;P Interventions</button>
@@ -266,7 +277,7 @@
 
 </ul>
 
-<h2 class="sec-title">Community Service</h2>
+<h2 class="sec-title" id="service">Community Service</h2>
 <div class="service-block">
   <h3>Associate Chair</h3>
   <ul class="service-list">
@@ -288,7 +299,7 @@
   </ul>
 </div>
 
-<h2 class="sec-title">Teaching &amp; Supervision</h2>
+<h2 class="sec-title" id="teaching">Teaching &amp; Supervision</h2>
 <div class="service-block">
   <h3>Lecturer</h3>
   <ul class="service-list">
@@ -303,7 +314,7 @@
   </ul>
 </div>
 
-<h2 class="sec-title">Education</h2>
+<h2 class="sec-title" id="education">Education</h2>
 <ul class="list-rows">
   <li><span class="row-date">2022–2025</span><span><strong>PhD in Psychology (HCI)</strong>, University of Luxembourg · Thesis Committee: Prof. Christine Schiltz, Prof. Verena Distler, Prof. Gabriele Lenzini</span></li>
   <li><span class="row-date">Apr–Sep 2025</span><span><strong>Academic Guest</strong>, Max Planck Institute for Security and Privacy · Supervisor: Dr. Yixin Zou</span></li>
